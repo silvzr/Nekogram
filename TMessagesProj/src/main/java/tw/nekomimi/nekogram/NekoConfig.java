@@ -72,7 +72,6 @@ public class NekoConfig {
     public static boolean useSystemEmoji = SharedConfig.useSystemEmoji;
     public static boolean ignoreBlocked = false;
     public static boolean disablePhotoSideAction = true;
-    public static boolean hideSendAsChannel = true;
     public static boolean hideKeyboardOnChatScroll = false;
     public static boolean rearVideoMessages = false;
     public static boolean confirmAVMessage = false;
@@ -664,18 +663,6 @@ public class NekoConfig {
         editor.putBoolean("showHiddenFeature5", showHiddenFeature);
         editor.apply();
     }
-    
-    public static void toggleHideSendAsChannel() {
-        hideSendAsChannel = !hideSendAsChannel;
-        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("hideSendAsChannel", hideSendAsChannel);
-        editor.apply();
-     }        
-    
-
-
-
 
     public static void toggleHideKeyboardOnChatScroll() {
         hideKeyboardOnChatScroll = !hideKeyboardOnChatScroll;
@@ -695,7 +682,7 @@ public class NekoConfig {
 
     public static void toggleAvatarBackgroundBlur() {
         avatarBackgroundBlur = !avatarBackgroundBlur;
-        SharedPreferences preferences = ApplicationLoader.licationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
+        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekoconfig", Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("avatarBackgroundBlur", avatarBackgroundBlur);
         editor.apply();
